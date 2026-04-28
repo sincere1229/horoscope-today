@@ -85,21 +85,61 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .lucky-key{font-size:10px;color:rgba(240,234,220,0.4);letter-spacing:1px;margin-bottom:6px;}
 .lucky-val{font-size:14px;color:var(--gold2);font-weight:500;}
 
-/* 有料ブロック */
+/* ★ LINEブロック（ラッキーの下） */
+.line-block{background:linear-gradient(135deg,rgba(0,185,0,0.12),rgba(0,150,0,0.08));border:1px solid rgba(0,200,100,0.3);border-radius:16px;padding:24px 28px;margin-bottom:16px;text-align:center;}
+.line-block-title{font-size:13px;color:rgba(240,234,220,0.7);line-height:1.8;margin-bottom:16px;}
+.line-block-title strong{color:#4ede88;display:block;font-size:15px;margin-bottom:6px;}
+.line-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#06c755,#04a844);border:none;border-radius:10px;color:#fff;font-family:'Noto Serif JP',serif;font-size:14px;font-weight:500;padding:14px 28px;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.line-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,199,85,0.4);}
+.line-btn-icon{font-size:20px;line-height:1;}
+
+/* ★ 有料ブロック（修正版） */
 .premium-block{background:linear-gradient(135deg,rgba(26,32,64,0.9),rgba(15,22,40,0.95));border:1px solid rgba(201,168,76,0.2);border-radius:16px;margin-bottom:16px;overflow:hidden;}
 .premium-header{padding:18px 28px;border-bottom:1px solid rgba(201,168,76,0.1);font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:3px;display:flex;align-items:center;gap:10px;}
 .premium-badge{background:linear-gradient(135deg,var(--gold),#8a6a20);color:var(--navy);font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;}
 .premium-preview{padding:20px 28px;position:relative;min-height:90px;}
 .preview-text{font-size:14px;line-height:2;color:rgba(240,234,220,0.4);filter:blur(4px);user-select:none;pointer-events:none;}
 .premium-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(10,14,26,0.92) 55%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px;}
-.unlock-btn{background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(201,168,76,0.05));border:1px solid rgba(201,168,76,0.5);border-radius:8px;color:var(--gold2);font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;padding:10px 24px;cursor:pointer;text-decoration:none;display:inline-block;}
 
-.bundle{background:linear-gradient(135deg,rgba(100,80,30,0.3),rgba(60,40,10,0.4));border:1px solid rgba(201,168,76,0.4);border-radius:16px;padding:32px;text-align:center;margin-bottom:20px;}
+/* ★ ¥500直課金ボタン（主CTA） */
+.unlock-btn-primary{
+  display:inline-block;
+  background:linear-gradient(135deg,#8a6a20,var(--gold),#8a6a20);
+  background-size:200% 100%;
+  border:none;
+  border-radius:10px;
+  color:var(--navy);
+  font-family:'Noto Serif JP',serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1px;
+  padding:13px 28px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:all 0.3s;
+  animation:shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer{0%{background-position:0% center;}100%{background-position:200% center;}}
+.unlock-btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,168,76,0.5);}
+
+/* ★ 総合鑑定ブロック（修正版） */
+.bundle{background:linear-gradient(135deg,rgba(100,80,30,0.3),rgba(60,40,10,0.4));border:1px solid rgba(201,168,76,0.4);border-radius:16px;padding:32px;text-align:center;margin-bottom:16px;}
 .bundle-title{font-family:'Cinzel',serif;font-size:15px;color:var(--gold2);letter-spacing:3px;margin-bottom:10px;}
 .bundle-desc{font-size:13px;color:rgba(240,234,220,0.6);line-height:1.9;margin-bottom:20px;}
-.bundle-price{font-family:'Cinzel',serif;font-size:24px;color:var(--gold);margin-bottom:4px;}
+.bundle-price{font-family:'Cinzel',serif;font-size:28px;color:var(--gold);margin-bottom:4px;}
 .bundle-price-sub{font-size:12px;color:rgba(240,234,220,0.4);margin-bottom:20px;}
-.bundle-btn{background:linear-gradient(135deg,#8a6a20,var(--gold),#8a6a20);border:none;border-radius:8px;color:var(--navy);font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:2px;padding:14px 36px;cursor:pointer;}
+.bundle-btn{background:linear-gradient(135deg,#8a6a20,var(--gold),#8a6a20);border:none;border-radius:10px;color:var(--navy);font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;padding:16px 40px;cursor:pointer;transition:all 0.2s;width:100%;}
+.bundle-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,168,76,0.4);}
+
+/* ★ おすすめ占いセクション */
+.recommend-section{margin-bottom:20px;}
+.recommend-title{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:3px;text-align:center;margin-bottom:16px;opacity:0.8;}
+.recommend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.recommend-card{background:linear-gradient(135deg,rgba(26,32,64,0.9),rgba(15,22,40,0.95));border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:16px 10px;text-align:center;text-decoration:none;transition:all 0.3s;display:block;}
+.recommend-card:hover{border-color:rgba(201,168,76,0.5);transform:translateY(-3px);box-shadow:0 8px 24px rgba(201,168,76,0.15);}
+.recommend-icon{font-size:28px;margin-bottom:8px;display:block;}
+.recommend-name{font-size:12px;color:var(--gold2);letter-spacing:1px;margin-bottom:4px;}
+.recommend-sub{font-size:10px;color:rgba(240,234,220,0.4);}
 
 .back-btn{width:100%;padding:13px;background:transparent;border:1px solid rgba(201,168,76,0.2);border-radius:8px;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;cursor:pointer;margin-bottom:20px;}
 
@@ -189,6 +229,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
       </div>
     </div>
 
+    <!-- ラッキー -->
     <div class="lucky-section">
       <div class="lucky-title">✦ Today's Lucky</div>
       <div class="lucky-grid">
@@ -207,28 +248,71 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
       </div>
     </div>
 
+    <!-- ★ LINE導線（ラッキーの直下） -->
+    <div class="line-block">
+      <div class="line-block-title">
+        <strong>🎁 無料で続きを受け取る</strong>
+        明日の運勢・開運アドバイス・限定占い情報をLINEでお届けします
+      </div>
+      <a href="https://lin.ee/XHDFrA8" class="line-btn" target="_blank" rel="noopener">
+        <span class="line-btn-icon">💬</span>
+        無料で続きを受け取る（LINE）
+      </a>
+    </div>
+
+    <!-- 有料ブロック① 今週・今月詳細 -->
     <div class="premium-block">
       <div class="premium-header">✦ 今週・今月の詳細運勢 <span class="premium-badge">PREMIUM</span></div>
       <div class="premium-preview">
         <p class="preview-text">今週はどんな展開が待っているのか、今月のターニングポイントはいつかを詳しく解説します。特に注意すべき日と最も運気が高まる日を具体的に...</p>
-        <div class="premium-overlay"><a href="#" class="unlock-btn">✦ 詳細運勢を見る（¥500）</a></div>
+        <div class="premium-overlay">
+          <!-- ★ ¥500 → /star/mini に直接遷移 -->
+          <a href="/star/mini" class="unlock-btn-primary">✦ この先3日で起きる出来事を見る（¥500）</a>
+        </div>
       </div>
     </div>
 
+    <!-- 有料ブロック② 相性・出会い運 -->
     <div class="premium-block">
       <div class="premium-header">✦ 相性の良い星座と今日の出会い運 <span class="premium-badge">PREMIUM</span></div>
       <div class="premium-preview">
         <p class="preview-text">今日特に相性が良い星座と、その人との関わり方を詳しくお伝えします。出会いのチャンスがある場所や時間帯、どんな人を引き寄せるかを...</p>
-        <div class="premium-overlay"><a href="#" class="unlock-btn">✦ 詳細運勢を見る（¥500）</a></div>
+        <div class="premium-overlay">
+          <!-- ★ ¥500 → /star/mini に直接遷移 -->
+          <a href="/star/mini" class="unlock-btn-primary">✦ この先3日で起きる出来事を見る（¥500）</a>
+        </div>
       </div>
     </div>
 
+    <!-- ★ 総合鑑定ボタン（onclick で /star/sogo 遷移） -->
     <div class="bundle">
-      <div class="bundle-title">✦ 総合鑑定パック ✦</div>
-      <p class="bundle-desc">今日の運勢 ＋ 数秘術 ＋ タロット<br>3つの視点であなたの運命を深く読み解きます</p>
-      <div class="bundle-price">¥1,980</div>
-      <div class="bundle-price-sub">通常 ¥3,000 → 特別価格</div>
-      <button class="bundle-btn">✦ 総合鑑定を申し込む ✦</button>
+      <div class="bundle-title">✦ AI 総合鑑定パック ✦</div>
+      <p class="bundle-desc">今日の運勢 ＋ 数秘術 ＋ タロット 3枚<br>3つの視点であなたの運命を深く読み解きます</p>
+      <div class="bundle-price">¥3,980</div>
+      <div class="bundle-price-sub">ホロスコープ図面 ＋ 四柱推命 ＋ タロット 本格リーディング</div>
+      <button class="bundle-btn" onclick="window.location.href='/star/sogo'">✦ 総合鑑定を申し込む ✦</button>
+    </div>
+
+    <!-- ★ おすすめ占い（bundleの下） -->
+    <div class="recommend-section">
+      <div class="recommend-title">✦ Other Oracle ✦</div>
+      <div class="recommend-grid">
+        <a href="https://tarot-app-rouge.vercel.app" class="recommend-card" target="_blank" rel="noopener">
+          <span class="recommend-icon">🃏</span>
+          <div class="recommend-name">タロット</div>
+          <div class="recommend-sub">大アルカナ22枚</div>
+        </a>
+        <a href="https://numerology-app-lovat.vercel.app" class="recommend-card" target="_blank" rel="noopener">
+          <span class="recommend-icon">🔢</span>
+          <div class="recommend-name">数秘術</div>
+          <div class="recommend-sub">運命数・使命を知る</div>
+        </a>
+        <a href="https://aicompat-app.vercel.app" class="recommend-card" target="_blank" rel="noopener">
+          <span class="recommend-icon">💕</span>
+          <div class="recommend-name">相性占い</div>
+          <div class="recommend-sub">2人の運命スコア</div>
+        </a>
+      </div>
     </div>
 
     <button class="back-btn" id="js-back">✦ 別の星座を見る ✦</button>
@@ -237,7 +321,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 
   <footer class="footer">
     <div class="footer-logo">✦ TWINKLE STAR ORACLE ✦</div>
-    <p class="footer-text">© 2024 Twinkle Lab. All rights reserved.</p>
+    <p class="footer-text">© 2025 Twinkle Lab. All rights reserved.</p>
   </footer>
 </div>
 
@@ -293,7 +377,6 @@ for (var z = 0; z < ZODIACS.length; z++) {
   })(ZODIACS[z]);
 }
 
-// 運勢データ生成（日付×星座でシード）
 var SCORE_LABELS = ['大吉', '吉', '中吉', '小吉', '末吉'];
 var COLORS = ['ゴールド','パール','ラベンダー','ローズ','ミント','スカイブルー','コーラル','アイボリー','セージグリーン','チャコール','バーガンディ','テラコッタ'];
 var ITEMS = ['水晶','ローズクォーツ','白い花','鏡','コイン','香り物','シルク','手帳','観葉植物','キャンドル','ブルーアパタイト','ムーンストーン'];
@@ -305,12 +388,6 @@ var MSGS = [
   {overall:'人との繋がりが幸運をもたらす日です。一人で抱え込まず、信頼できる人に相談したり、助けを求めることで道が開けます。今日出会う人、偶然再会する人との縁を大切にしてください。何気ない会話の中に大切なヒントが隠れています。笑顔で人に接することで、あなたのまわりに良い縁と幸運が集まってきます。',love:'共通の友人を通じて素敵な出会いがあるかもしれません。社交的に動くことで恋愛運が高まります。',work:'チームワークが際立つ日。周囲と積極的に協力することで、一人では達成できない成果が生まれます。',money:'人からの情報や紹介がお得な機会につながりそうです。ネットワークを大切に。',health:'誰かと一緒に体を動かすと◎。グループ活動や友人との散歩が心身をリフレッシュさせます。'},
   {overall:'じっくりと内省し、計画を練るのに適した日です。今は派手に動くよりも、静かに自分の進む方向を確認する時間を持つことが大切です。見えないところで着実に成長しています。今日感じた気づきや閃きをメモしておくと、後から大きな宝となります。基礎固めをしっかり行うことで、来る飛躍のための力が蓄えられます。',love:'相手の気持ちを細かく観察する日。言葉より行動に注目することで、本当の想いが見えてきます。',work:'今日は新しいことを始めるより、既存の仕事を丁寧に仕上げる日。質を高めることに集中して。',money:'収支を見直したり、将来の計画を立てるのに良い日。長期的な視点で考えることが吉。',health:'睡眠と休息を大切に。今日は無理せず体の声に従ってください。'},
   {overall:'変化と革新のエネルギーが高まっています。今まで「こうあるべき」と思っていた固定観念を手放すことで、新しい可能性が広がります。思い切った行動や、普段やらないことへの挑戦が吉をもたらします。変化を恐れず、ワクワクする方向に向かって進んでください。今日の一歩が、未来の大きな転換点になるかもしれません。',love:'いつもと違うアプローチを試してみて。ときにはサプライズや新しい提案が関係を輝かせます。',work:'新しいアイデアや方法を積極的に提案する日。前例にとらわれない発想が評価されます。',money:'新しい収入源や投資の情報に注目。ただし慎重な判断を忘れずに。',health:'新しい食事習慣やエクササイズを試すのに良い日。変化が体に活力をもたらします。'},
-];
-
-var DETAIL_MSGS = [
-  {love:'今日は言葉よりも行動で気持ちを伝えることが大切です。小さなサプライズや思いやりのある行動が相手の心に深く届きます。',work:'今日の努力は必ず見えないところで評価されています。諦めずに誠実に取り組んでください。',money:'今日は予算を決めてから買い物に行くと良いでしょう。衝動買いより計画的な出費が吉。',health:'水分をこまめに取ることを意識してください。今日は特に体の水分バランスが大切です。'},
-  {love:'パートナーや気になる相手の話をじっくり聞いてあげることで、あなたへの信頼が深まります。聴く力があなたの魅力です。',work:'今日は一つのことに集中して取り組んでください。マルチタスクより深く掘り下げる姿勢が成果につながります。',money:'今日は不要なものを手放すことでお金の流れが良くなります。断捨離を試してみて。',health:'深呼吸を意識してください。ストレスを感じたら、まず3回大きく呼吸することで気持ちが落ち着きます。'},
-  {love:'素直な「ありがとう」の一言が今日の恋愛運を高めます。感謝の気持ちを言葉にして伝えることを大切にしてください。',work:'チームメンバーへの感謝と承認を忘れずに。それがチーム全体の士気を高め、あなたへの信頼も増します。',money:'今日は記録をつけることが開運につながります。家計簿や支出メモをつけると良い流れが生まれます。',health:'今日は体を温めることを意識して。温かい飲み物や、温かいお風呂が体調を整えます。'},
 ];
 
 function calcSeed(zodiacId, dateObj) {
@@ -326,7 +403,6 @@ function calcSeed(zodiacId, dateObj) {
 function showFortune(zodiac) {
   var seed = calcSeed(zodiac.id, now);
   var msgData = MSGS[seed % MSGS.length];
-  var detailData = DETAIL_MSGS[(seed >> 3) % DETAIL_MSGS.length];
   var loveScore = 40 + (seed % 61);
   var workScore = 40 + ((seed >> 2) % 61);
   var moneyScore = 40 + ((seed >> 4) % 61);
@@ -338,12 +414,10 @@ function showFortune(zodiac) {
   var num = NUMS[(seed >> 1) % NUMS.length];
   var item = ITEMS[(seed >> 2) % ITEMS.length];
 
-  // 表示
   document.getElementById('js-sym').textContent = zodiac.symbol;
   document.getElementById('js-zname').textContent = zodiac.name;
   document.getElementById('js-zperiod').textContent = zodiac.period;
 
-  // 星表示
   var starsHtml = '';
   for (var i = 1; i <= 5; i++) {
     starsHtml += '<span class="star-icon ' + (i <= stars ? 'filled' : 'empty') + '">★</span>';
@@ -351,7 +425,6 @@ function showFortune(zodiac) {
   document.getElementById('js-stars-display').innerHTML = starsHtml;
   document.getElementById('js-score-text').textContent = scoreLabel;
 
-  // メーター
   document.getElementById('js-love-bar').style.width = loveScore + '%';
   document.getElementById('js-work-bar').style.width = workScore + '%';
   document.getElementById('js-money-bar').style.width = moneyScore + '%';
@@ -359,14 +432,12 @@ function showFortune(zodiac) {
   document.getElementById('js-work-val').textContent = workScore + '%';
   document.getElementById('js-money-val').textContent = moneyScore + '%';
 
-  // メッセージ
   document.getElementById('js-msg').textContent = msgData.overall;
   document.getElementById('js-love-msg').textContent = msgData.love;
   document.getElementById('js-work-msg').textContent = msgData.work;
   document.getElementById('js-money-msg').textContent = msgData.money;
   document.getElementById('js-health-msg').textContent = msgData.health;
 
-  // ラッキー
   document.getElementById('js-lcolor').textContent = color;
   document.getElementById('js-lnum').textContent = num;
   document.getElementById('js-litem').textContent = item;
